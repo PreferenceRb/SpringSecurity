@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.security.dao.cluster.CityDao">
+    <resultMap id="cityMap" type="com.example.security.vo.City">
+        <id column="id" property="id" jdbcType="VARCHAR"></id>
+        <result column="province_id" property="provinceId" jdbcType="VARCHAR"></result>
+        <result column="city_name" property="cityName" jdbcType="VARCHAR"></result>
+        <result column="description" property="description" jdbcType="VARCHAR"></result>
+    </resultMap>
+    <select id="queryCity" resultMap="cityMap">
+        SELECT
+            id,province_id,city_name,description
+            FROM city
+    </select>
+</mapper>
